@@ -1,0 +1,18 @@
+<div class="ui-g-12 ui-md-4 full-width">
+  <p-calendar #cal
+              [(ngModel)]="date"
+              dateFormat="dd.mm.yy"
+              placeholder="הזן תאריך"
+              showIcon="true"
+              showTime="true"
+              hourFormat="24"
+              (onSelect)="saveDate()"
+              [locale]="heb">
+    <p-footer class="flex space-between">
+      <p-button class="ui-button-raised ui-button-rounded space" label="שמור" (onClick)="saveDate(); cal.overlayVisible = false"></p-button>
+      <p-button class="ui-button-raised ui-button-rounded space" label="נקה" (onClick)="clearDate(); cal.overlayVisible = false"></p-button>
+      <p-button class="ui-button-raised ui-button-rounded space" label="בטל" (onClick)="cancelEdit(); cal.overlayVisible = false"></p-button>
+    </p-footer>
+  </p-calendar>
+  <p-button class="ui-button-raised ui-button-rounded space" label="עכשיו" (onClick)="pickNow()"></p-button>
+</div>
